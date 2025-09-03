@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Appointment | Razor & Fade</title>
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+  <section class="booking-section">
+    <div class="container">
+      <h1 class="section-title">Book Your Appointment</h1>
+      <form class="booking-form" id="bookingForm">
+        <div class="form-grid">
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input type="tel" name="phone" placeholder="Phone Number" required />
+          <input type="email" name="email" placeholder="Email Address" required />
+          <select name="service" required>
+            <option value="">Select a Service</option>
+            <option value="classic">Classic Haircut</option>
+            <option value="fade">Fade & Taper</option>
+            <option value="shave">Hot Towel Shave</option>
+            <option value="beard">Beard Trim</option>
+          </select>
+          <input type="date" name="date" required />
+          <input type="time" name="time" required />
+        </div>
+        <textarea name="notes" placeholder="Additional notes (optional)"></textarea>
+        <button type="submit" class="hero-btn">Confirm Booking</button>
+        <p id="confirmationMsg" class="hidden">✅ Booking Confirmed! We'll reach out shortly.</p>
+      </form>
+    </div>
+  </section>
+  <script>
+    const form = document.getElementById("bookingForm");
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const name = form.name.value;
+      const phone = form.phone.value;
+      const email = form.email.value;
+      const service = form.service.value;
+      const date = form.date.value;
+      const time = form.time.value;
+      const notes = form.notes.value;
+  
+      const message = `Hello! I'd like to book an appointment.%0A
+  Name: ${name}%0A
+  Phone: ${phone}%0A
+  Email: ${email}%0A
+  Service: ${service}%0A
+  Date: ${date}%0A
+  Time: ${time}%0A
+  Notes: ${notes}`;
+  
+      const whatsappNumber = "+2349151377597"; // Your WhatsApp number with country code
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  
+      // Option 1: Open WhatsApp
+      window.open(whatsappURL, "_blank");
+  
+      // Option 2 (Optional fallback): Email
+      // window.location.href = `mailto:your@email.com?subject=Booking&body=${message}`;
+    });
+  </script>
+  
+
+
+</body>
+</html>

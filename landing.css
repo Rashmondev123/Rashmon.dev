@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #1e1e1e;
+  }
+  
+  /* Header */
+  .site-header {
+    background-color: #111827;
+    padding: 1rem 0;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #facc15;
+  }
+  
+  .btn {
+    background-color: #facc15;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: black !important;
+    font-weight: 600;
+  }
+  
+  /* Hero */
+  .hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1588776814546-2ffcfb3c96f6') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-btn {
+    background-color: #facc15;
+    color: black;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .hero-btn:hover {
+    background-color: #eab308;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+  .section {
+    padding: 4rem 1rem;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #111827;
+  }
+  
+  /* Services */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    background-color: #f3f4f6;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    text-align: center;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* About */
+  .about-text {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #374151;
+  }
+  
+  /* Testimonials */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .testimonial-card {
+    background-color: #fffbe6;
+    padding: 1.2rem;
+    border-left: 4px solid #facc15;
+    border-radius: 6px;
+    font-style: italic;
+    color: #1e1e1e;
+  }
+  
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Contact CTA */
+  .contact-cta {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .contact-cta .cta-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-cta .hero-btn {
+    margin-top: 1rem;
+    background-color: #facc15;
+    color: black;
+  }
+  .booking-section {
+    padding: 4rem 1rem;
+    background-color: #f3f4f6;
+  }
+  
+  .booking-form {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .booking-form input,
+  .booking-form select,
+  .booking-form textarea {
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+  }
+  
+  .booking-form textarea {
+    resize: vertical;
+    height: 100px;
+    grid-column: span 2;
+  }
+  
+  .hero-btn {
+    background-color: #facc15;
+    color: #111827;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #confirmationMsg {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+  }
+  /* === Responsive Fixes === */
+
+@media (max-width: 768px) {
+  /* Stack nav links vertically or prepare for mobile menu */
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    background: #111827;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none; /* You can toggle this with JS later */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form textarea {
+    grid-column: span 1;
+  }
+
+  .service-grid,
+  .testimonial-grid,
+  .gallery-grid {
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .gallery-grid img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-btn {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}
+
+
+  
